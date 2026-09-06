@@ -63,7 +63,7 @@ python Visualisation/visual_from_gt_preds.py \
   --max_samples 200
 ```
 
-Use the same dataset and participant as testing. Exports PNG pairs to `outputs/visualization/vis_p06/`: reference gaze in red, prediction in green.
+Use the same dataset and participant as testing. Exports PNG pairs to `outputs/visualization/vis_p06/`, prediction in green.
 
 ## Results
 
