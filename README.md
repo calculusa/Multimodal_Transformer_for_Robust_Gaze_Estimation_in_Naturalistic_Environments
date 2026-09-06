@@ -1,4 +1,4 @@
-# GazeUnconstrained Model
+# Multimodal Transformer for Robust Gaze Estimation in Naturalistic Environments
 
 Token level fusion of full face and eye features through a Transformer for 3D gaze estimation. The main model uses ResNet50 backbones and L1 training loss.
 
