@@ -1,0 +1,30 @@
+dataset:
+  root: "/home/lunet/cowz2/Documents/GazeEstimation/Dataset/GazeUnconstrained/processed_dataset"  # 数据根目录
+  face_size: 448
+  eye_size: 112
+  hflip_p: 0.0                    # 如需随机水平翻转可设为 0.5（标签已自动修正）
+  augment: true                   # 启用颜色扰动等数据增强
+  use_frame: false                # 只用 face+eyes（和你现在一致）
+
+model:
+  backbone: "resnet50"            # 主干网络（可切换 resnet18/resnet50）
+  maps: 64                        # backbone 输出后的通道数（1x1 conv 压缩）
+  layers: 6                       # Transformer 编码层数
+  max_seq_hint: 1024               # 位置编码容量；face+eyes 足够
+
+train:
+  save_dir: "checkpoints_face_eye_r50_l1"  # 模型权重与结果保存目录
+  batch_size: 64                  # 显存不够可调小：32/16/8
+  workers: 8                      # DataLoader 线程数
+  epochs: 20
+  freeze_epochs: 5                # 前 N 个 epoch 冻结 CNN 只训头
+  head_lr: 0.001                   # 头部学习率（新层）
+  backbone_lr: 0.0001              # CNN 学习率（预训练层）
+  weight_decay: 0.0001
+  warmup_epochs: 3                 # 线性 warmup 再 cosine 衰减
+  loss_type: "l1"                  # 可选: "l1" / "angular"
+  amp: true                        # 启用混合精度训练
+
+pretrain:
+  enable: true                    # ResNet50 用 torchvision 权重就行，一般不需要额外预训练
+  path: "/home/lunet/cowz2/Documents/GazeEstimation/GazeTR/GazeTR-H-ETH.pt"                        # 如有本地预训练权重，可填路径
