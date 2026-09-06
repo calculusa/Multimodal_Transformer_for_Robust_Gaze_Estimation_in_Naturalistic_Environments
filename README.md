@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/6451c079-10af-4267-9390-67986eead657
+
 # Multimodal Transformer for Robust Gaze Estimation in Naturalistic Environments
 
 Token level fusion of full face and eye features through a Transformer for 3D gaze estimation. The main model uses ResNet50 backbones and L1 training loss.
@@ -6,7 +10,7 @@ Token level fusion of full face and eye features through a Transformer for 3D ga
 
 ## Demo video
 
-Coming soon.
+
 
 
 
