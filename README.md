@@ -52,7 +52,7 @@ python Test/test_loso.py \
 
 Replace `p06` with your participant. Predictions are saved as `preds_p06.csv`.
 
-### Visualize
+### Visualize_image
 
 ```bash
 python Visualisation/visual_from_gt_preds.py \
@@ -62,6 +62,15 @@ python Visualisation/visual_from_gt_preds.py \
   --out_dir outputs/visualization \
   --max_samples 200
 ```
+
+
+### Visualize_Video
+
+ '''bash
+ python predic_gaze_video.py --config config_freeze_r50_face_eye_old.yaml -i /home/lunet/cowz2/Documents/VisualFocus_of_Attention/Dataset/GazeUncontrained_video/face_video_matteo.mp4
+
+ '''
+
 
 Use the same dataset and participant as testing. Exports PNG pairs to `outputs/visualization/vis_p06/`, prediction in green.
 
