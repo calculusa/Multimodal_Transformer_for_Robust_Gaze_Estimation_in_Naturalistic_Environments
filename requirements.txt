@@ -1,0 +1,9 @@
+# Dependencies for training, evaluation, and visualisation.
+# Versions are unpinned; this is not a validated environment lockfile.
+torch
+torchvision
+numpy
+Pillow
+PyYAML
+tqdm
+opencv-python
